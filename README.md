@@ -233,6 +233,47 @@ Sharding - the horizontal scaling mechanism proposed for Ethereum 2.0, spitting 
 
 Rollup - do some transactions off-chain, then push a summary of the transactions on-chain. This helps scale the number of transactions per second of a network.
 
+### distributed systems
+
+state machine replication (SMR) problem - how to reach consensus between nodes all running the same state machine. a problem from theoretical compsci in the 80s.
+
+consistency - local coherence. when all nodes' local history agrees on the global history of the state machine
+
+consensus - a process of that seeks widespread agreement among group members
+
+liveness - every submitted transaction is eventually added to all nodes histories
+
+faulty node - a node that deviates from the global history, either due to nefariousness or incompetency (like a crash fault, byzantine fault, or an omission fault).
+
+a database (or blockchain) can be thought of as a state machine
+- a write/change operation is a state change
+- changes are atomic and can be rolled back
+- how do databases reach consensus? 
+
+byzantine broadcast - A randomly chosen leader must ensure all honest users agree on the same message
+
+the synchronous model  - nodes have a shared global clock and guaranteed message delivery (a maximum bound on message delay). strong assumptions. allows for a high ratio of byzantine nodes.
+
+the asynchronous model - no shared clock between nodes, no assumptions of messages delay (other than messages eventually arrive). weak assumptions. FLP means no positive results.
+
+the partially synchronous model - a sweet spot between the asynchronous and synchronous models. outages, delays, and attacks can exist but they aren't indefinite. 
+normal conditions = synchronous model
+attack conditions = asynchronous model
+
+global stabilization time (GST) - an unknown duration. the time it takes to transition from attack to normal conditions
+
+byzantine agreement - ?
+
+round-robin leaders - each node takes a turn being the leader and coordinating all nodes. the leader sends its ordered list of transactions (or, block) to all other nodes at some period. nodes update their local copy with the leader's block/history.
+
+dolev-strong protocol - leader sends a state change to all nodes, signed. all nodes sign the message they received from the leader and send it to other nodes. inconsistencies are resolved with a majority vote.
+this protocol is slow given the number of rounds it could take to reach consistency.
+
+FLP Impossibility of Consensus - a deterministic algorithm for achieving consensus is impossible.
+
+CAP theorem - consistency, availability, partition tolerance. pick 2 of 3.
+
+
 Culture, Slang, and Trends
 --------------------------------------
 
@@ -521,6 +562,10 @@ Mutant Ape Yacht Club - a collection of 20,000 Mutant Apes that were created by 
 A project by Yuga Labs.
 
 Beeple - Mike Winkelmann, a digital artist who sold some of his art as NFTs for millions of USD
+
+OpenSea - an NFT marketplace
+
+
 ### Security
 OpenZeppelin - a set of vetted smart contracts. It helps you put precautionary security measures in place for your Web3 apps. Using its audit services, you can ensure your practices will conform to a set of established standards. It describes itself as an open-source framework for building secure smart contracts, meant to simplify the process of building smart contracts.
 
