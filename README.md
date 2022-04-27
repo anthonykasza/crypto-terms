@@ -188,6 +188,8 @@ Public/private keys - mathematically linked key pairs which provide robust authe
 
 Hash function - any function that can be used to map data of arbitrary size to fixed-size values. A one-way function, that is, a function for which it is practically infeasible to invert or reverse the computation.
 
+Preimage - a mathy term for the input to a hash function
+
 Consensus - a fault-tolerant mechanism that is used to achieve the necessary agreement on a single data value or a single state of the ledger among peer nodes in a network. Different blockchain networks have different consensus mechanisms.
  
 PoW (Proof-of-work) - the consensus mechanism used by the Bitcoin network. A miner solves a hashing puzzle related to the next set of transactions (the next block). Upon finding the solution, the miner is rewarded with bitcoin and the solved block is added to the chain. PoW mining is very inefficient in that many miners are calculating hashes but only 1 wins.
@@ -200,6 +202,7 @@ Proof-of-activity - ?
 Proof-of-lapsed time - ?
 Proof-of-capacity - ?
 Proof-of-importance - ?
+
 pBFT (Practical Byzantine Fault Tolerance) - ?
 
 Token - a cryptocurrency which runs over a layer-1 or layer-2 network. Many tokens run on top of the Ethereum network.
@@ -232,6 +235,37 @@ Liquidity pool tracker - a service that provides data about liquidity pools. Exa
 Sharding - the horizontal scaling mechanism proposed for Ethereum 2.0, spitting the blockchain into multiple instances of the blockchain (or database) where each version has its own version of the chain
 
 Rollup - do some transactions off-chain, then push a summary of the transactions on-chain. This helps scale the number of transactions per second of a network.
+
+hashcash - a proof-of-work system used to limit email spam and denial-of-service attacks.
+A textual encoding of a hashcash stamp is added to the header of an email to prove the sender has expended a modest amount of CPU time calculating the stamp prior to sending the email. The receiver can, at negligible computational cost, verify that the stamp is valid.
+
+find a nonce that, when concat'd with the message (message can be the current block and the hash of the previous block) and hashed satisfies some target - like the first 10 characters of the hash are all "0". bitcoin includes as algorithm that makes the target more/less difficult depending on how much time pasted since the previous solution.
+
+chain fork - a parent block has 2 valid child branches. the longest chain (fork with the most proven work) wins
+
+reorg - a less-work chain fork is discarded given a more-work chain fork
+
+unspent transaction output (UTXO) - the amount of digital currency that remains after a cryptocurrency transaction. bitcoin uses UTXO, ethereum does not.
+bitcoins in a transaction are spent in their entirety then destroyed, and new bitcoins are created (as change) this prevents double spending.
+UTXO makes BTC non-fungible.
+nodes maintain the UTXO set to determine double spends.
+
+lock time - at what point in time a transaction becomes valid. a lock time of zero means a transaction can be included in the blockchain immediately.
+
+coinbase - (not the company) the first transaction in a new block. the coinbase transaction has 1 input and it doesn't point to anything. the outputs of the transaction awards a scriptPubKey (usually the miner's) with a BTC reward (12.5 at the time of writing).
+
+btc transaction fees - they are implicit. the difference between the input and output is the fee a miner is rewarded for producing a block that contains the transaction. miners are incentivized to include transactions with highest fees.
+
+bitcoin script interpreter (BSI) - an execution environment for a stack-based programming language for locking and unlocking transactions. compare with the EVM which has different set of opcodes and is more general purpose. all nodes run the BSI.
+
+gossip network - a peer-to-peer communication mechanism in which nodes periodically exchange state information about themselves and other nodes they know about
+
+initial block download (IBD) - requests existing blocks from peers, matches transaction list to merkle root in header, and process each transaction in order.
+
+chainstate - all the state of a blockchain. certain queries are not easily computed because of how a blockchain is structured. 
+block hashes can be queried, transaction IDs cannot be (the whole data struct would need to be traversed to locate a single transaction).
+an idea for a new products/services is a new index for blockchain data, such as an address-based index
+
 
 ### distributed systems
 
@@ -607,7 +641,11 @@ Exploit the EVM - exploit the nodes running the EVM (or other blockchain softwar
 https://ethereum.stackexchange.com/questions/9654/can-a-potential-bug-in-the-ethereum-vm-be-used-to-deploy-a-trojan-on-every-node
 https://blocksecteam.medium.com/new-integer-overflow-bug-discovered-in-solana-rbpf-7729717159ee
 
+network partitioning attack - an attacker aims at splitting the Bitcoin network into (at least) two disjoint components such that no information (e.g. transaction) can be exchanged between them
+
 Submit a subtle bug to the open source project
+
+Backdoor and distribute a binary instead of source code
 
 ### Targeting an Exchange
 See Mt. Gox, Bitfloor, Bitfinex, Coincheck, Binance
