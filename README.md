@@ -67,6 +67,8 @@ DEX (Decentralized exchange) - a type of cryptocurrency exchange which allows fo
 CEX (centralized exchanges) - the opposite of a DEX. Coinbase is a CEX. CEXes must abide by KYC and SEC regulations but allow users to exchange cryptocurrency for fiat. CEX often maintains custody of users' keys.
 
 Wallet - a device, physical medium, program or a service which stores the public and/or private keys for cryptocurrency transactions. Once a transaction is signed with private keys, the wallet broadcasts the transaction to the blockchain network. Wallets facilitate interacting with DEX's.
+a bitcoin wallet keeps track of utxo's that involve specified addresses. those transactions are saved to disk in a wallet. many wallets will track output of transactions that have yet to be accepted into a block.
+combining contents of wallets in a single transaction often means the wallets are owned by the same individual (or collaborating individuals)
 
 Paper wallet - a piece of paper with your private and public keys printed out. Some paper wallets might also have a scannable barcode created by an app. It is a way to store and take access to your cryptocurrency offline.
 
@@ -181,6 +183,8 @@ Orphaned blocks / Stale blocks - blocks mined at the same time as another block 
 Broadcast - transactions are broadcast across a blockchains's peer nodes to request validation of the transaction. Transactions may be instantly accepted or added to a mempool.
 
 Mempool - a smaller database (or queue) of unconfirmed or pending transactions which every node keeps. When a transaction is confirmed by being included in a block, it is removed from the mempool.
+if the mempools has a large backlog, miners prioritize transactions with highest fees.
+if the pending transactions in the mempool is smaller than the chain's block's size, transactions paying no fee (inputs minus outputs equals zero) may be included in mined blocks.
 
 Validators/Miners - Nodes which check a transaction and either accept or reject the transaction. Accepted transactions are included in the next block published on a blockchain. Nodes which validate transactions are often rewarded with a small fee. Validators on different blockchain networks are referred to with different names: miners, validators, etc.
 
@@ -258,16 +262,29 @@ btc transaction fees - they are implicit. the difference between the input and o
 
 bitcoin script interpreter (BSI) - an execution environment for a stack-based programming language for locking and unlocking transactions. compare with the EVM which has different set of opcodes and is more general purpose. all nodes run the BSI.
 
-gossip network - a peer-to-peer communication mechanism in which nodes periodically exchange state information about themselves and other nodes they know about
-
 initial block download (IBD) - requests existing blocks from peers, matches transaction list to merkle root in header, and process each transaction in order.
 
 chainstate - all the state of a blockchain. certain queries are not easily computed because of how a blockchain is structured. 
 block hashes can be queried, transaction IDs cannot be (the whole data struct would need to be traversed to locate a single transaction).
 an idea for a new products/services is a new index for blockchain data, such as an address-based index
 
+Simplified Payment Verification (SPV) - using Bitcoin without running a full network node. nodes validate only PoW
+
+full network node - a program that fully validates transactions and blocks. Almost all full nodes also help the network by accepting transactions and blocks from other full nodes, validating those transactions and blocks, and then relaying them to further full nodes
+
+validation rules - the terms used by nodes in a network to incorporate new blocks into their local copy of the blockchain. if one of the rules is not met, a block is discarded. validation rules are "consensus critical".
+rules for bitcoin include the block's total size, validity checks on the transactions within a block, no double spending, a block's timestamp is within some acceptable range from the node's local time, and the block points to a block the node's previously accepted.
+
+user-activated soft fork (UASF) - a specific kind of divergence in a bitcoin or cryptocurrency chain. The fork leads to a lack of consensus in nodes, which may be resolved at a later point. It has interesting applications to the ongoing administration of a cryptocurrency model
+
+child pays for parent (CPFP) - you pay a high fee to incentivize miners to also confirm the unconfirmed transaction from which you are drawing the inputs i.e. the parent transaction.
+
+Replace-By-Fee (RBF) -  is a node policy that allows an unconfirmed transaction in a mempool to be replaced with a different transaction that spends at least one of the same inputs and which pays a higher transaction fee
+
 
 ### distributed systems
+
+gossip network - a peer-to-peer communication mechanism in which nodes periodically exchange state information about themselves and other nodes they know about
 
 state machine replication (SMR) problem - how to reach consensus between nodes all running the same state machine. a problem from theoretical compsci in the 80s.
 
@@ -642,6 +659,8 @@ https://ethereum.stackexchange.com/questions/9654/can-a-potential-bug-in-the-eth
 https://blocksecteam.medium.com/new-integer-overflow-bug-discovered-in-solana-rbpf-7729717159ee
 
 network partitioning attack - an attacker aims at splitting the Bitcoin network into (at least) two disjoint components such that no information (e.g. transaction) can be exchanged between them
+
+re-mining attack - re-mine from a previous block to cause a reorg and force the acceptance of your "longer", more work, subchain. this can be worth the effort if a block contains a transaction with a huge fee. this is called fee sniping.
 
 Submit a subtle bug to the open source project
 
