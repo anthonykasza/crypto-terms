@@ -196,18 +196,18 @@ Preimage - a mathy term for the input to a hash function
 
 Consensus - a fault-tolerant mechanism that is used to achieve the necessary agreement on a single data value or a single state of the ledger among peer nodes in a network. Different blockchain networks have different consensus mechanisms.
  
-PoW (Proof-of-work) - the consensus mechanism used by the Bitcoin network. A miner solves a hashing puzzle related to the next set of transactions (the next block). Upon finding the solution, the miner is rewarded with bitcoin and the solved block is added to the chain. PoW mining is very inefficient in that many miners are calculating hashes but only 1 wins.
+Proof-of-work (PoW) - the consensus mechanism used by the Bitcoin network. A miner solves a hashing puzzle related to the next set of transactions (the next block). Upon finding the solution, the miner is rewarded with bitcoin and the solved block is added to the chain. PoW mining is very inefficient in that many miners are calculating hashes but only 1 wins.
 
-Proof-of-stake - a miner is delegated by nodes with a stake in the token. The rich are more likely to be delegated to mine (and become richer).
+Proof-of-stake (PoS) - a miner is delegated by nodes with a stake in the token. The rich are more likely to be delegated to mine (and become richer).
+
+proof-of-space -  proof of work but the work is precomputed. moves work from CPU/GPU to storage.
 
 Proof-of-history - ?
 Proof-of-burn - ?
 Proof-of-activity - ?
 Proof-of-lapsed time - ?
-Proof-of-capacity - ?
+Proof-of-capacity
 Proof-of-importance - ?
-
-pBFT (Practical Byzantine Fault Tolerance) - ?
 
 Token - a cryptocurrency which runs over a layer-1 or layer-2 network. Many tokens run on top of the Ethereum network.
 
@@ -280,6 +280,15 @@ user-activated soft fork (UASF) - a specific kind of divergence in a bitcoin or 
 child pays for parent (CPFP) - you pay a high fee to incentivize miners to also confirm the unconfirmed transaction from which you are drawing the inputs i.e. the parent transaction.
 
 Replace-By-Fee (RBF) -  is a node policy that allows an unconfirmed transaction in a mempool to be replaced with a different transaction that spends at least one of the same inputs and which pays a higher transaction fee
+
+malleability - the ability to alter a ciphertext and have the cleartext affected. given a stream cipher, if an attacker knows the plaintext at some offset in the ciphertext, they could xor the encrypted bytes with the cleartext bytes and a new value. when the modified ciphertext is decrypted, the cleartext will contain the attacker's value instead of the original value.
+malleability is often seen as undesirable in a cryptographic system, but it can be useful in some cases like homomorphic encryption and multi-signature protocols.
+
+Multi-signature protocols - allow a group of signers (that individually possess their own private/ public key pair) to produce a single signature on a message.
+
+revocable sequence maturity contract (revocable transaction) - a special output script within a bitcoin transaction that allows a sender to be able to revoke a payment. transaction signed with a revocation key. the act of revocation involves the revealing of private keys.
+
+Hashed Timelock Contract (HTLC) - a transactional agreement used in the cryptocurrency industry to produce conditional payments. It is basically a payment wherein the receiver or the beneficiary is required to acknowledge the receipt of payment before a predetermined time or a preset deadline.
 
 
 ### distributed systems
@@ -388,6 +397,8 @@ TradFi - traditional finance
 CeFi - centralized finance
 
 Money/DeFi Legos - composable services which are built for borrowing, staking, or lending assets, among other things, and can be put together to create a single multi-functional financial application
+
+trust laundering - moving/hiding points of trust in a supposedly decentralized/trustless project
 
 Coins, Tokens, and Networks
 --------------------------------------
@@ -662,6 +673,8 @@ network partitioning attack - an attacker aims at splitting the Bitcoin network 
 
 re-mining attack - re-mine from a previous block to cause a reorg and force the acceptance of your "longer", more work, subchain. this can be worth the effort if a block contains a transaction with a huge fee. this is called fee sniping.
 
+long range attack - where a chain could be reorg'd by a node with a large amount of mining power or stake
+
 Submit a subtle bug to the open source project
 
 Backdoor and distribute a binary instead of source code
@@ -734,4 +747,12 @@ https://ocw.mit.edu/courses/mas-s62-cryptocurrency-engineering-and-design-spring
 MetaMask's blacklist of phishing domains
 https://github.com/MetaMask/eth-phishing-detect/blob/master/src/hosts.txt
 
+Smart contract best practices
+https://consensys.github.io/smart-contract-best-practices/attacks/
+
+Smart contract security/auditing tools
+https://consensys.github.io/smart-contract-best-practices/security-tools/
+
+A survey of attacks on Ethereum smart contracts
+https://eprint.iacr.org/2016/1007.pdf
 
