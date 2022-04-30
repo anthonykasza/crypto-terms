@@ -584,6 +584,7 @@ Social trading - a set that follows the trading strategy of another trader, esse
 ### Wallets
 Metamask - a self-custodial software cryptocurrency wallet used to interact with the Ethereum blockchain. A browser extension and mobile app. Some concerns have been raised by researchers at Brave about using a browser plugin as a wallet as it facilitates wallet address tracking across browsing.
 Concensys is the company which makes Metamask.
+It feels really werid to trust a browser extension with money.
 https://metamask.io/
 
 Phantom -  a self-custodial software wallet, audited by Kudelski Security, for Solana.
@@ -648,6 +649,7 @@ Manticore - a symbolic emulator capable of simulating complex multi-contract and
 Ethersplay -  a graphical EVM disassembler capable of method recovery, dynamic jump computation, source code matching, and binary diffing.
 
 Slither -  a static analyzer that detects common mistakes such as bugs in reentrancy, constructors, method access, and more.
+https://github.com/crytic/slither
 
 Echidna - a next-generation smart fuzzer that targets EVM bytecode. The Assurance team will apply their knowledge of these tools with expertise in static analysis, fuzzing and concolic testing, and design-level risks to ensure your smart contracts are free from vulnerabilities and that you have the right tools and knowledge to ensure long-term success.
 
@@ -755,4 +757,7 @@ https://consensys.github.io/smart-contract-best-practices/security-tools/
 
 A survey of attacks on Ethereum smart contracts
 https://eprint.iacr.org/2016/1007.pdf
+
+TruffleSuite - a sweet suite of tools for SC development. Ganache sets up an instance of a eth devnet on a localhost. Truffle is a simple to use dev env for writing, compiling, and deploying SCs (requires nodejs + npm). 
+https://trufflesuite.com/
 
