@@ -561,6 +561,8 @@ Binance - a cryptocurrency exchange which is the largest exchange in the world i
 
 Coinbase - is an American company that operates a cryptocurrency exchange platform.
 
+opensea - an NFT markteplace on the Polygon network
+
 Kyber Network - a non-custodial DEX
 
 Balancer - a DEX with an AMM (similar to Uniswap). Balancer is able to create liquidity pools of many (more than 2) assets. Governance token is BAL.
@@ -675,6 +677,8 @@ network partitioning attack - an attacker aims at splitting the Bitcoin network 
 
 re-mining attack - re-mine from a previous block to cause a reorg and force the acceptance of your "longer", more work, subchain. this can be worth the effort if a block contains a transaction with a huge fee. this is called fee sniping.
 
+Replay attack - an exploit that can occur when two forked crypto-currencies allow transactions to be valid across both chains.
+
 long range attack - where a chain could be reorg'd by a node with a large amount of mining power or stake
 
 Submit a subtle bug to the open source project
@@ -686,11 +690,20 @@ See Mt. Gox, Bitfloor, Bitfinex, Coincheck, Binance
 
 ### Targeting a Contract or Combining Contracts
 Re-entrancy bug - when a function makes an external call to another untrusted contract. Then the untrusted contract makes a call back to the original function in an attempt to drain funds. One of the major dangers of calling external contracts is that they can take over the control flow, and make changes to your data that the calling function wasn't expecting.
+re-entering the start of a contract before executing the remaining of the contract. in the case of TheDAO hack, attackers were able to enter the contract logic, withdraw funds, then re-enter the contract logic (and re-withdraw) before account balances were updated.
 
 Front run - trading stocks or any asset based on insider knowledge of a future transaction that will affect its price. This is illegal because it's based on inside information.
 Crypto miners/bots can front run crypto by monitoring a mempool's backlog of transactions and submitting the same transactions with higher gas fees. This is not illegal because it is based on public information (the mempool is public).
 
 Flash loan attack (aka flash attack) - (e.g. Beanstalk, PancakeSwap) obtaining a large amount of a token to manipulate its price or another aspect of the market
+
+Short address attack - caused when a contract does not check the length of the address. ERC20 addresses are 20-bytes. when providing the transfer function an address with a trailing 0, but leaving the 0 of the end, a bug in the language parser can be taken advantage of to manipulate the transferred amount.
+https://vessenes.com/the-erc20-short-address-attack-explained/
+
+Over and underflows - when a number is incremented above its maximum (or decremented below its minimum) value and wraps around.
+Use SafeMath: https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeMath.sol
+
+visibility and delegatecall - incorrect function modifiers can make a function impossible to call or give the incorrect calling permissions to a function. delegatecall can be abused to call arbitrary functions - powerful but ripe for abuse.
 
 A trusted oracle alters inputs to manipulate a contract.
 
