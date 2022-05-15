@@ -227,6 +227,8 @@ Block explorer - an online interface for searching a blockchain, and enables you
 
 Oracle - an interface for blockchain projects to interact with off-chain data/projects (e.g. getting the price of gold into a smart contract). Chainalysis maintains a sanctions oracle that Tornado Cash uses to prevent sanctioned wallets from participating.
 
+decentralized oracle network (DON) - a group of nodes that collects data from the outside world and places it in a blockchain network. "outside world" data can be: ETH/USD exchange rates, Verifiable Random Function (VRF) data, and more. 
+
 decentralized applications (dApps) - an application built on a decentralized network that combines a smart contract and a frontend user interface
 
 Address - a unique sequence of numbers and letters and functions very much like an email address. It refers to a specific destination on the network where cryptocurrency can be sent to, and it can be used only once. The idea is to give a person a unique address every time he or she is to receive crypto. 
@@ -563,6 +565,8 @@ Coinbase - is an American company that operates a cryptocurrency exchange platfo
 
 opensea - an NFT markteplace on the Polygon network
 
+chainlink - a framework for DONs. Nodes are paid for thier services in LINK.
+
 Kyber Network - a non-custodial DEX
 
 Balancer - a DEX with an AMM (similar to Uniswap). Balancer is able to create liquidity pools of many (more than 2) assets. Governance token is BAL.
@@ -773,4 +777,10 @@ https://eprint.iacr.org/2016/1007.pdf
 
 TruffleSuite - a sweet suite of tools for SC development. Ganache sets up an instance of a eth devnet on a localhost. Truffle is a simple to use dev env for writing, compiling, and deploying SCs (requires nodejs + npm). 
 https://trufflesuite.com/
+
+A calendar of NFT releases on the Polygon network
+https://nftcalendar.io/b/polygon/
+
+A great place for a baby's first steps into Solidity.
+https://cryptozombies.io/en/course
 
