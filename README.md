@@ -665,8 +665,20 @@ Exploits, Attacks, and Hacks
 
 ### Targeting a Wallet or Custodian
 Steal private keys (in an id.json file) from an endpoint
+
 Steal a wallet's recovery seed 
+
 Websites can tell if a wallet extension is installed in the browser via javascript
+https://arxiv.org/abs/2109.06836
+
+popups which resemble metamask approvals
+https://blog.knowbe4.com/phishing-attack-targets-metamask-user-private-keys
+
+### Targeting a Project
+hack a dApp's frontend hosting provider and hijack the domain
+https://twitter.com/QuickswapDEX/status/1525306033400188928
+
+drop phishing URLs into a project's discord channels
 
 ### Targeting a Network
 Sybil attack - aka the 51% attack. Influencing a network by controlling the majority of its nodes or consensus mechanism.
