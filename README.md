@@ -209,7 +209,7 @@ Proof-of-lapsed time - ?
 Proof-of-capacity
 Proof-of-importance - ?
 
-Token - a cryptocurrency which runs over a layer-1 or layer-2 network. Many tokens run on top of the Ethereum network.
+Token - a cryptocurrency which runs over a layer-1 or layer-2 network. Many tokens run on top of the Ethereum network. In its most literal form, a token is a smart contract that implements the ERC20 standard and is published on a blockchain. the contract keeps track of things like, the total supply of the token and which address have what balance.
 
 Equity token - a fungible token which represents equity in an underlying asset, for example the stock of a company, or the shares of an equity/liquidity pool.
 
@@ -225,7 +225,13 @@ Layer 2 - a solution which builds on layer 1 and relies on it to finalize its tr
 
 Block explorer - an online interface for searching a blockchain, and enables you to retrieve data about transactions, addresses, blocks, fees, and more. Each block explorer provides data about a particular blockchain, and the type of information included will vary depending on the architecture of the blockchain it serves.
 
-Oracle - an interface for blockchain projects to interact with off-chain data/projects (e.g. getting the price of gold into a smart contract). Chainalysis maintains a sanctions oracle that Tornado Cash uses to prevent sanctioned wallets from participating.
+Oracle - an interface for blockchain projects to interact with off-chain data/projects (e.g. getting the price of gold into a smart contract). Chainalysis maintains a sanctions oracle that Tornado Cash uses to prevent sanctioned wallets from participating. Chainlink is the grandaddy of oracle providers.
+
+adapter - a chainlink thingie that glues 2 APIs together in a standard way
+
+verifiable random function (VRF) - a chainlink thingie that provides a random number in a robust fashion. there are issues with using on-chain sources of random numbers. VRFs solve these.
+
+hybrid (smart) contracts - smart contracts that combine on-chain code with off-chain oracles
 
 decentralized oracle network (DON) - a group of nodes that collects data from the outside world and places it in a blockchain network. "outside world" data can be: ETH/USD exchange rates, Verifiable Random Function (VRF) data, and more. 
 
@@ -292,6 +298,7 @@ revocable sequence maturity contract (revocable transaction) - a special output 
 
 Hashed Timelock Contract (HTLC) - a transactional agreement used in the cryptocurrency industry to produce conditional payments. It is basically a payment wherein the receiver or the beneficiary is required to acknowledge the receipt of payment before a predetermined time or a preset deadline.
 
+contract ABI - a JSON definition of how to interact (inputs and outputs) with a contract
 
 ### distributed systems
 
@@ -431,7 +438,13 @@ Externally Owned Account (EOA) - an address representing a wallet. Bitcoin only 
 
 Smart Contract Account - an account which receives transactions and does something. These are not available in bitcoin
 
-Gas - fee for executing a smart contract. Gas is paid even if a transaction fails. The cost of gas is based on how busy a network is. Gas in other networks (not Ethereum) is much cheaper. Gas is based on the consensus mechanism (e.g. PoW, PoS)
+Gas - fee for executing a smart contract. Gas is paid even if a transaction fails. The cost of gas is based on how busy a network is. Gas in other networks (not Ethereum) is much cheaper. Gas is based on the consensus mechanism (e.g. PoW, PoS). viewing state on the blockchain is free. changing state costs gas. miner are incentivized to include transactions in their blocks which make them the most gas fees.
+
+gas cost - a static amount. how much gas a transaction costs
+
+gas price - a dynamic amount. how much you're willing to pay for a gas cost. this depends on how busy a network is.
+
+gas limit - the max gas per block. this ensures a block's transactions don't take too long.
 
 Atomicity - transactions are atomic. If step 5 out of 10 fails, the first 4 steps (which successfully executed) are rolled back
 
@@ -500,6 +513,21 @@ The attack on The DAO caused a fork of Etherum into Ethereum (ETH) and Ethereum 
 
 Services and Tools
 --------------------------------------
+### Development
+
+hardhat - a local EVM that can be used to develop and test smart contracts. hardhat is built with nodejs. hardhat is able to fork the mainnet!
+
+brownie - a python based environment for solidity development
+
+Smart contract security/auditing tools
+https://consensys.github.io/smart-contract-best-practices/security-tools/
+
+TruffleSuite - a sweet suite of tools for SC development. Ganache sets up an instance of a eth devnet on a localhost. Truffle is a simple to use dev env for writing, compiling, and deploying SCs (requires nodejs + npm). 
+https://trufflesuite.com/
+
+faucet - a contract which mints free tokens on a testnet (testing network). multiple testing networks exist such as Kovan, Ropsten, and more.
+
+
 ### Others
 
 Augur - allows you to buy and sell real-money stakes in world outcomes including sports, crypto, politics, and current events. Crypto betting.
@@ -769,6 +797,9 @@ Damn Vulnerable DeFi - the offensive security playground for decentralized finan
 https://www.damnvulnerabledefi.xyz/
 https://cmichel.io/damn-vulnerable-de-fi-solutions/
 
+Smart Contract Developer Bootcamp 2021 - Day1: an intro to blockchains, ethereum, solidity, remix, and chainlink. Day2: an intro to smart contract development, hardhat, and brownie
+https://chain.link/bootcamp/bootcamp-2021-on-demand
+
 Coursera Decentralized Finance (DeFi) by Cam Harvey at Duke - Coursera class on DeFi foundations
 https://www.coursera.org/learn/decentralized-finance-infrastructure-duke
 https://www.coursera.org/learn/decentralized-finance-primitives-duke
@@ -784,20 +815,20 @@ https://github.com/MetaMask/eth-phishing-detect/blob/master/src/hosts.txt
 Smart contract best practices
 https://consensys.github.io/smart-contract-best-practices/attacks/
 
-Smart contract security/auditing tools
-https://consensys.github.io/smart-contract-best-practices/security-tools/
-
 A survey of attacks on Ethereum smart contracts
 https://eprint.iacr.org/2016/1007.pdf
-
-TruffleSuite - a sweet suite of tools for SC development. Ganache sets up an instance of a eth devnet on a localhost. Truffle is a simple to use dev env for writing, compiling, and deploying SCs (requires nodejs + npm). 
-https://trufflesuite.com/
 
 A calendar of NFT releases on the Polygon network
 https://nftcalendar.io/b/polygon/
 
 A great place for a baby's first steps into Solidity.
 https://cryptozombies.io/en/course
+
+https://ethernaut.openzeppelin.com/ - a smart contract CTF by openzeppelin
+
+https://etherhack.positive.com/#/ - an ethereum smart contract CTF
+
+https://www.odysseydao.com/learn - a catalog of great reading material for getting into web3 and defi. the pages load really slow for me :(
 
 Papers Worth Reading
 --------------------
