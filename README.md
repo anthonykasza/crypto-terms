@@ -559,7 +559,9 @@ Gemini - a regulated cryptocurrency exchange, wallet, and custodian that makes i
 
 BitGo - a custodian that supports key splitting. For example, 2 out of 3 keys are required to make a transaction. 1 piece resides in a hardware token, 1 piece resides on a mobile device, and 1 piece resides with the custodian.
 
-Binance - a cryptocurrency exchange which is the largest exchange in the world in terms of daily trading volume of cryptocurrencies. Binance was banned in the United States on regulatory grounds and is no longer accessible for U.S. citizens. Binance operates out of Malta - sketchy!
+Binance - a cryptocurrency exchange which is the largest exchange in the world in terms of daily trading volume of cryptocurrencies. Binance was banned in the United States on regulatory grounds and is no longer accessible for U.S. citizens.
+
+1inch - a decentralized exchange that aims to offer the "best rates by discovering the most efficient swapping routes across all leading DEXes."
 
 Coinbase - is an American company that operates a cryptocurrency exchange platform.
 
@@ -734,6 +736,7 @@ Rug pull - scam in which a crypto developer promotes a new project to investors,
 
 Pump and dump - to drive up the price of an asset (pump) with the intention of selling it (dump) before the price drops. Parties who buy at the height of a pump are left "holding the bag" once the asset's price drops.
 
+honeypot contracts - publish a contract to the blockchain which looks to be vulnerable, but isn't. attackers send the contract tokens in an attempt to drain/exploit the contract. the exploits don't work as the attackers expect, thus funding the contract. eventually, the contract owner withdraws the contract's balance.
 
 
 
@@ -796,3 +799,23 @@ https://nftcalendar.io/b/polygon/
 A great place for a baby's first steps into Solidity.
 https://cryptozombies.io/en/course
 
+Papers Worth Reading
+--------------------
+What's in Your Wallet? Privacy and Security Issues in Web 3.0 - web2 trackers embedded on defi sites can be used to compromise the privacy of web3 users. embedded javascript can also be used to modify a defi site's DOM and trick the user into confirming transactions in their metamask wallet which are not part of the legitimate defi site. the group created a metamask patch which rotates (uses fake/proxy) wallet addresses for each defi site to avoid tracking a user's activity back to a single EOA wallet.
+https://arxiv.org/abs/2109.06836
+https://github.com/brave-experiments/defi-privacy-measurements
+
+
+teEther: Gnawing at Ethereum to Automatically Exploit Smart Contracts - this paper scans the ethereum blockchin for vulnerable contracts and creates a tool for automatically exploiting vulnerable contracts. it contains some interesting analyses of EVM bytecode. 
+https://www.usenix.org/conference/usenixsecurity18/presentation/krupp
+https://github.com/nescio007/teether
+
+
+The Art of The Scam: Demystifying Honeypots in Ethereum Smart Contracts - this paper identifies honeypots on the ethereum blockchain using symbolic execution and a taxonomy of honeypot lures
+https://www.usenix.org/conference/usenixsecurity19/presentation/ferreira
+https://github.com/christoftorres/HoneyBadger
+
+
+A Data Science Approach for Detecting Honeypots in Ethereum - using labeled data from "The Art of The Scam: Demystifying Honeypots in Ethereum Smart Contracts" this paper creates an ML classifier to identify honeypot contracts
+https://arxiv.org/abs/1910.01449
+https://github.com/rcamino/honeypot-detection
