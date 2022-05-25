@@ -50,10 +50,10 @@ types
 
 address type member functions
 ---------------------------
-delegatecall() - a contract can delegate the definition of a function to another contract. delegatecall allows for the creation of modular code and libraries. trusting external contracts with things like delegatecall is duh duh duh dAnGeRoUs. but so is trusting 3rd party libraries in any language.
-transfer() - transfer an address some ether. if the address is a contract and does not have a fallback/receive() function defined, the transfer can fail. transfer has a static gas limit.
-send() - similar to transfer, returns a bool status
-call() - triggers a function in a smart contract. empty data triggers a contract's fallback function. returns a bool status.
+- **delegatecall()** - a contract can delegate the definition of a function to another contract. delegatecall allows for the creation of modular code and libraries. trusting external contracts with things like delegatecall is duh duh duh dAnGeRoUs. but so is trusting 3rd party libraries in any language.
+- **transfer()** - transfer an address some ether. if the address is a contract and does not have a fallback/receive() function defined, the transfer can fail. transfer has a static gas limit.
+- **send()** - similar to transfer, returns a bool status
+- **call()** - triggers a function in a smart contract. empty data triggers a contract's fallback function. returns a bool status.
 
 contracts can access special values at execution time. these values can be provided by the current state of the contract, the current block, the transaction, or the message initiated the transaction.
 see https://docs.soliditylang.org/en/latest/units-and-global-variables.html#block-and-transaction-properties
