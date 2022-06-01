@@ -94,6 +94,12 @@ Random Observations and Thoughts
 - free tools like etherscan and infru could correlate an IP address to a wallet pretty easily. some testnet faucets even require authentication from a twitter or facebook account. developing on a testnet is far from anonymous.
 - why and how does Remix IDE use Matomo Analytics?
 
+- democratizing finance is achieved with blockchain. And voting on the blockchain is done by nodes. And nodes require a publicly routable IP address (so that peers can reach them). And who owns the majority of the Internet's address spaces?
+  - https://commons.wikimedia.org/wiki/File:Allocation_of_IPv4_Address_Space_(Country_Code).svg
+  - https://commons.wikimedia.org/wiki/File:Allocation_of_IPv6_Address_Space_(Country_Code).svg
+
+- west coast tech is tired of dealing with east coast bankers so the former decided to build their own latter.
+
 
 Patterns
 ---------
