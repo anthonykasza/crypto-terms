@@ -102,7 +102,8 @@ To interact with a smart contract, send it tokens and some inputs - much like a 
 Gas - fees associated with a transaction. Gas must be paid even if a transaction fails. A max gas fee per block exists for many blockchains, thus limiting the number of steps/transactions which can be taken per block.
 
 Cryptocurrency tumbler - a service offered to mix potentially identifiable or "tainted" cryptocurrency funds with others, so as to obscure the trail back to the fund's original source. A way of mixing/laundering cryptocurrencies. Tumblers can be public or private.
-One example of a tumbler/mixer is TornadoCash
+One example of a tumbler/mixer is TornadoCash.
+Gambling platforms are also very effective at mixing/laundering funds.
 
 Geomining - mining tokens by providing GPS data
 
@@ -710,6 +711,8 @@ https://twitter.com/QuickswapDEX/status/1525306033400188928
 
 drop phishing URLs into a project's discord channels
 
+inject into the frontend DOM of a dApp and alter transaction details (these details will still be correct in the wallet's approval prompts but user may not pay close enough attention to identify discrepancies between transaction approval amounts in a dApp frontend vs in a wallet)
+
 ### Targeting a Network
 Sybil attack - aka the 51% attack. Influencing a network by controlling the majority of its nodes or consensus mechanism.
 
@@ -731,6 +734,10 @@ Submit a subtle bug to the open source project
 
 Backdoor and distribute a binary instead of source code
 
+take advantage of the immutibility of a blockchain by publishing C2 instructions on it
+
+
+
 ### Targeting an Exchange
 See Mt. Gox, Bitfloor, Bitfinex, Coincheck, Binance
 
@@ -738,7 +745,7 @@ See Mt. Gox, Bitfloor, Bitfinex, Coincheck, Binance
 Re-entrancy bug - when a function makes an external call to another untrusted contract. Then the untrusted contract makes a call back to the original function in an attempt to drain funds. One of the major dangers of calling external contracts is that they can take over the control flow, and make changes to your data that the calling function wasn't expecting.
 re-entering the start of a contract before executing the remaining of the contract. in the case of TheDAO hack, attackers were able to enter the contract logic, withdraw funds, then re-enter the contract logic (and re-withdraw) before account balances were updated.
 
-Front run - trading stocks or any asset based on insider knowledge of a future transaction that will affect its price. This is illegal because it's based on inside information.
+Front run - this more like "targeting a transaction". trading stocks or any asset based on insider knowledge of a future transaction that will affect its price. This is illegal because it's based on inside information.
 Crypto miners/bots can front run crypto by monitoring a mempool's backlog of transactions and submitting the same transactions with higher gas fees. This is not illegal because it is based on public information (the mempool is public).
 
 Flash loan attack (aka flash attack) - (e.g. Beanstalk, PancakeSwap) obtaining a large amount of a token to manipulate its price or another aspect of the market
@@ -766,6 +773,13 @@ Pump and dump - to drive up the price of an asset (pump) with the intention of s
 
 honeypot contracts - publish a contract to the blockchain which looks to be vulnerable, but isn't. attackers send the contract tokens in an attempt to drain/exploit the contract. the exploits don't work as the attackers expect, thus funding the contract. eventually, the contract owner withdraws the contract's balance.
 
+Pig-Butchering Scam (杀猪盘) - using a dating app to contact a target and eventually convincing them to send you their tokens 
+
+ransomware - encrypt some data (files or databases), lock a browser (browser lockers), or lock an endpoint and hold it ransom
+
+clippers - injecting new data into a user's clipboard. if malware sees that a source wallet address has been copied to the clipboard, replace it with a different address.
+
+cryptojacker - mining on system without permission. [norton 360 now comes with a crypto~jacker~miner](https://krebsonsecurity.com/2022/01/norton-360-now-comes-with-a-cryptominer/)
 
 
 References and Notable Literature
@@ -829,6 +843,10 @@ https://ethernaut.openzeppelin.com/ - a smart contract CTF by openzeppelin
 https://etherhack.positive.com/#/ - an ethereum smart contract CTF
 
 https://www.odysseydao.com/learn - a catalog of great reading material for getting into web3 and defi. the pages load really slow for me :(
+
+Chainalysis Crypto Crime reports - execllent reporting and graphs on crime involving cryptocurencies
+  - 2021 https://go.chainalysis.com/rs/503-FAP-074/images/Chainalysis-Crypto-Crime-2021.pdf
+  - 2022 https://go.chainalysis.com/rs/503-FAP-074/images/Crypto-Crime-Report-2022.pdf
 
 Papers Worth Reading
 --------------------
