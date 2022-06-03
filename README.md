@@ -2,7 +2,42 @@ Summary
 =======
 Most of the definitions have been copied and pasted here, verbatim, from other sources. Some definitions may contain inaccuracies. This document is merely meant to aggregate terms and definitions as I learn them, not be authoritative. Some definitions contain commentary and smart-assery.
 
-
+Table of Contents
+------------------
+- [Traditional and Digital Finance Terms](#traditional-and-digital-finance-terms)
+- [Blockchain and Cryptography Terms](#blockchain-and-cryptography-terms)
+- [Distributed systems](#distributed-systems)
+- [Culture, Slang, and Trends](#culture-slang-and-trends)
+- [Coins, Tokens, and Networks](#coins-tokens-and-networks)
+  * [Bitcoin](#bitcoin)
+  * [Ethereum](#ethereum)
+  * [Others](#others)
+- [Services and Tools](#services-and-tools)
+  * [Centralized Exchanges and Custodians](#centralized-exchanges-and-custodians)
+  * [Developer Tools](#developer-tools)
+  * [Audits and Security](#audits-and-security)
+  * [APIs and Data](#apis-and-data)
+  * [dApps](#dapps)
+    + [File hosting](#file-hosting)
+    + [Name services](#name-services)
+    + [Mixers and tumblers](#mixers-and-tumblers)
+    + [Swapping, lending, and borrowing (DEX)](#swapping-lending-and-borrowing-dex)
+    + [Gambling](#gambling)
+    + [Oracles](#oracles)
+    + [NFTs](#nfts)
+    + [DAOs](#daos)
+    + [Others](#others-1)
+  * [Wallets](#wallets)
+  * [News and Information](#news-and-information)
+- [Exploits, Attacks, and Hacks](#exploits-attacks-and-hacks)
+  * [Targeting a Wallet or Custodian](#targeting-a-wallet-or-custodian)
+  * [Targeting a Project](#targeting-a-project)
+  * [Targeting a Network](#targeting-a-network)
+  * [Targeting an Exchange](#targeting-an-exchange)
+  * [Targeting a Contract or Contract Combinations](#targeting-a-contract-or-contract-combinations)
+  * [Targeting Users](#targeting-users)
+- [References and Notable Literature](#references-and-notable-literature)
+- [Papers Worth Reading](#papers-worth-reading)
 
 
 Traditional and Digital Finance Terms
@@ -13,6 +48,8 @@ Ledger - is an account or record used to store bookkeeping entries for transacti
 Transaction - is an agreement, or communication, between a buyer and seller to exchange goods, services, or assets for payment. Any transaction involves a change in the status of the finances of two or more businesses or individuals.
 
 Clearing - the time it takes for a transaction to settle, or complete.
+
+Society for Worldwide Interbank Financial Telecommunication (SWIFT) - a Belgian cooperative society providing services related to the execution of financial transactions and payments between banks worldwide. Its principal function is to serve as the main messaging network through which international payments are initiated. A high profile target for financially motived attacks.
 
 Currency - a system of money in general use. A unit of accounting.
 
@@ -54,7 +91,7 @@ Synthetic assets - financial instruments that are engineered to simulate other i
 
 Spot Market (Cash market) - a public financial market in which financial instruments or commodities are traded for immediate delivery. It contrasts with a futures market, in which delivery is due at a later date
 
-Buyback - a corporation buys back its assets, reducing its supply and increasing overall value
+Buyback - a corporation buys back its assets, reducing its supply and increasing overall value. Stock buybacks are similar to token burning.
 
 Bid-ask spread - a signal of the levels where buyers will buy and sellers will sell. A tight bid-ask spread can indicate an actively traded security with good liquidity. Meanwhile, a wide bid-ask spread may indicate poor liquidity. High volume often causes high liquidity and thus a tight spread.
 
@@ -131,7 +168,6 @@ Pooling highly correlated tokens reduces potential for impermanent loss.
 Pair correlation - how correlated a token pair is
 
 Order matching - how a centralized exchange matches bids with asks
-
 
 Decentralized Autonomous Organization (DAO) - a group of people who come together without a central leader or company dictating any of the decisions. Members of DAOs often buy their way in, most of the time purchasing a governance token specifically for the DAO that gives them the ability to vote on decisions that are made around how the pool of money is spent and managed
 
@@ -247,7 +283,7 @@ Liquidity pool tracker - a service that provides data about liquidity pools. Exa
 
 Sharding - the horizontal scaling mechanism proposed for Ethereum 2.0, spitting the blockchain into multiple instances of the blockchain (or database) where each version has its own version of the chain
 
-Rollup - do some transactions off-chain, then push a summary of the transactions on-chain. This helps scale the number of transactions per second of a network.
+Rollup - do some transactions off-chain, then push a summary of the transactions on-chain. This helps scale the number of transactions per second of a network. layer 2 chains rollup their transactions and place summaries onto layer 1 chains.
 
 hashcash - a proof-of-work system used to limit email spam and denial-of-service attacks.
 A textual encoding of a hashcash stamp is added to the header of an email to prove the sender has expended a modest amount of CPU time calculating the stamp prior to sending the email. The receiver can, at negligible computational cost, verify that the stamp is valid.
@@ -273,7 +309,7 @@ bitcoin script interpreter (BSI) - an execution environment for a stack-based pr
 
 initial block download (IBD) - requests existing blocks from peers, matches transaction list to merkle root in header, and process each transaction in order.
 
-chainstate - all the state of a blockchain. certain queries are not easily computed because of how a blockchain is structured. 
+chainstate - all the state of a blockchain. certain queries are not easily computed because of how a blockchain is structured (dune solves some of these issues) .  
 block hashes can be queried, transaction IDs cannot be (the whole data struct would need to be traversed to locate a single transaction).
 an idea for a new products/services is a new index for blockchain data, such as an address-based index
 
@@ -301,7 +337,8 @@ Hashed Timelock Contract (HTLC) - a transactional agreement used in the cryptocu
 
 contract ABI - a JSON definition of how to interact (inputs and outputs) with a contract
 
-### distributed systems
+Distributed systems
+----------------------
 
 gossip network - a peer-to-peer communication mechanism in which nodes periodically exchange state information about themselves and other nodes they know about
 
@@ -461,8 +498,6 @@ Pokadot (DOT) - a protocol that connects blockchains (a bridge), allowing value 
 
 Ren - an interoperability protocol to port assets across different blockchains using the RenVM. Best highlighted by the recent surge in renBTC, the Ren Bridge allows users to deposit native assets (BTC, BCH, ZEC) and receive an Ethereum-wrapped flavor in return
 
-The Graph (GRT) - a decentralized protocol for indexing and querying data from blockchains. Just as Google indexes the web, The Graph indexes blockchain data from networks like Ethereum and Filecoin. This data is grouped into open APIs called subgraphs that anyone can query
-
 Solana (SOL)_ - a growing rival to Ethereum which can process many more transactions per second and charges much lower transaction fees than Ethereum. Solana operates on proof-of-stake and proof-of-history.
 
 Litecoin (LTC) - a cryptocurrency created from a fork in the Bitcoin blockchain in 2011. It was initially designed to address the developer's concerns that Bitcoin was becoming too centrally controlled, and to make it more difficult for large scale mining firms to gain the upper hand in mining. While eventually unsuccessful in preventing enterprise miners from taking over the lion's share of Litecoin mining, the cryptocurrency has reworked itself into a minable coin and a peer-to-peer payment system. Litecoin processes transactions faster than Bitcoin.
@@ -503,85 +538,20 @@ Cardano (ASA) - decentralized proof-of-stake (PoS) blockchain platform designed 
 
 Polygon (MATIC) - a layer 2 scaling solution that runs alongside the Ethereum blockchain allowing for speedy transactions and low fees 
 
-Terra - a blockchain protocol underpinned by a suite of decentralized stablecoins. The most popular is called TerraUSD, or UST. The stablecoins maintain their pegs through a coin called LUNA. LUNA is a volatile cryptocurrency. The elasticity of its supply keeps the prices of its stablecoins in check
+Terra (LUNA) - a stablecoin mostly know for losing its peg. definitely a shitcoin. arguably a scamcoin.
 
 Avalanche (AVAX) - a decentralized, open-source proof of stake blockchain with smart contract functionality.
 
 Yield - a protocol that provides a fix-rate borrowing mechanism. Yield tokens are prefixed with "y", e.g. yDAI
 
-The DAO - a decentralized autonomous organization that exists as a set of contracts that resides on the Ethereum blockchain, sort of like the original DAO LLC. It no longer exists.
-The attack on The DAO caused a fork of Etherum into Ethereum (ETH) and Ethereum Classic (ETC).
+Ripple (XRP) - a real-time gross settlement system, currency exchange and remittance network created by Ripple Labs Inc.
+
+Flow blockchain - a blockchain by dapper labs
+
 
 Services and Tools
 --------------------------------------
-### Development
-
-hardhat - a local EVM that can be used to develop and test smart contracts. hardhat is built with nodejs. hardhat is able to fork the mainnet!
-
-brownie - a python based environment for solidity development
-
-Smart contract security/auditing tools
-https://consensys.github.io/smart-contract-best-practices/security-tools/
-
-TruffleSuite - a sweet suite of tools for SC development. Ganache sets up an instance of a eth devnet on a localhost. Truffle is a simple to use dev env for writing, compiling, and deploying SCs (requires nodejs + npm). 
-https://trufflesuite.com/
-
-faucet - a contract which mints free tokens on a testnet (testing network). multiple testing networks exist such as Kovan, Ropsten, and more.
-
-
-### Others
-
-Augur - allows you to buy and sell real-money stakes in world outcomes including sports, crypto, politics, and current events. Crypto betting.
-
-DeFi Pulse Index - a service which creates a portfolio of static composite tokens using static sets.
-
-Instadapp - ?
-
-Unstoppable domain - a domain name, registered through a blockchain, that can translate a wallet address to a human-friendly name. Unstoppable domains do not require renewal fees. Unstoppable Domains is operated by a for-profit company.
-Compare with ENS. Compare with Namecoin.
-
-Ethereum Name Service (ENS) - traditional DNS servers, translating website requests into IP addresses and controlling the server a user will reach when they search for a domain. However, instead of using a traditional registrar, ENS uses smart contracts. This helps to remove many of the traditional practices required to purchase a domain such as personal information and billing details. ENS is operated by a DAO and voting is done with ENS tokens.
-Compare with Unstoppable Domains. Compare with Namecoin.
-
-IPFS (InterPlanetary File System) - a protocol and peer-to-peer network for storing and sharing data in a distributed file system. IPFS uses content-addressing to uniquely identify each file in a global namespace connecting all computing devices. IPFS is similar to BitTorrent - it uses DHT to store files/data. IPFS is created/maintained by Protocol Labs.
-IPFS has been used for Phishing, Botnet C&C, and malware hosting.
-IPFS has also been used by CloudFlare, Brave, and Microsoft
-
-Wormhole - a popular blockchain bridge that was recently hacked for over $300 mill. Wormhole relies on 19 Guardians to reach consensus. Jump Crypto is one of them.
-
-Emrit -  a maker of a hardware device, a CoolSpot, which mines cryptocurrencies. HNT is one token it supports.
-
-yEarn - a yield aggregator. A collection of decentralized finance (DeFi) products that allow users to earn interest on their crypto assets using smart contract platforms like Ethereum.
-
-Numerai - an AI-run, crowd-sourced hedge fund
-
-Nexus Mutual - a decentralized alternative to insurance. Nexus Mutual's first product is Smart Contract Cover, which protects against smart contract vulnerabilities for smart contracts - “unintended code usage that results in a material financial loss”.
-
-TornadoCash - a mixer/tumbler service
-
-Bitpay - a bitcoin payment service provider. BitPay provides Bitcoin and Bitcoin Cash payment processing services for merchants.
-
-Anchor - a savings, lending and borrowing platform built on the Terra Blockchain. It offers lucrative passive income opportunities for depositors and provides borrowers easy access to collateral-backed stablecoin loans
-
-Aave - one of the most popular and leading lending protocols in the DeFi landscape. Has been around since 2017.
-
-Compound (cToken) - a lending market. Deposit a token and you receive, newly minted, cTokens (e.g. cDAI), representing your share of some pool. Exchange your cToken for your original deposit and the cToken is burnt. cTokens are valuable because they are collateralized by the pool of deposited tokens.
-COMP is the governance token of Compound.
-
-Benqi - a lending platform on Avalanche
-
-Sushiswap - an Automated Market Maker (AMM) and lending protocol with a governance token known as SUSHI
-
-Uniswap - a cryptocurrency exchange which uses a decentralized network protocol. Uniswap is also the name of the company that initially built the Uniswap protocol. The protocol facilitates automated transactions between cryptocurrency tokens on the Ethereum blockchain through the use of smart contracts. 
-Uniswap contacts can limit maximum price slippage. The governance token is UNI, similar to how Compound has COMP.
-Uniswap has version 2 and version 3. Version 3 supports ranges for liquidity suppliers (effectively a limit order).
-
-Pancakeswap - an alternative to uniswap
-
-Curve - a software that uses multiple cryptocurrencies to operate an automated market making service focused on stablecoins
-
-Platypus - a single-side AMM (decentralized exchange) designed for exchanging stablecoins on the Avalanche network
-
+### Centralized Exchanges and Custodians
 Kraken - a United States-based cryptocurrency exchange and bank, founded in 2011. The exchange provides trading between cryptocurrency and fiat currencies, and provides price information to Bloomberg Terminal.
 
 Gemini - a regulated cryptocurrency exchange, wallet, and custodian that makes it simple and secure to buy bitcoin, ether, and other cryptocurrencies.
@@ -590,83 +560,26 @@ BitGo - a custodian that supports key splitting. For example, 2 out of 3 keys ar
 
 Binance - a cryptocurrency exchange which is the largest exchange in the world in terms of daily trading volume of cryptocurrencies. Binance was banned in the United States on regulatory grounds and is no longer accessible for U.S. citizens.
 
-1inch - a decentralized exchange that aims to offer the "best rates by discovering the most efficient swapping routes across all leading DEXes."
-
 Coinbase - is an American company that operates a cryptocurrency exchange platform.
-
-opensea - an NFT markteplace on the Polygon network
-
-chainlink - a framework for DONs. Nodes are paid for thier services in LINK.
-
-Kyber Network - a non-custodial DEX
-
-Balancer - a DEX with an AMM (similar to Uniswap). Balancer is able to create liquidity pools of many (more than 2) assets. Governance token is BAL.
-
-Dy/dx (DYDX) - a DEX for margin trading and derivatives using a hybrid on-chain/off-chain approach. This hybrid approach supports limit orders and maximum slippage constraints. Flash loans are free.
-
-Project Serum - a DEX
-
-KyberNetwork (KNC) - a decentralized finance (DeFi) project that gives users the ability to exchange one cryptocurrency for another without having to use a centralized exchange.
 
 FTX - a leading centralized cryptocurrency exchange specializing in derivatives and leveraged products 
 
-Set Protocol - a protocol for creating tokenized baskets of ERC20 tokens (similar to an ETF or mutual fund).
+### Developer Tools
+hardhat - a local EVM that can be used to develop and test smart contracts. hardhat is built with nodejs. hardhat is able to fork the mainnet!
 
-Static set - a set whose tokens do not change. Similar to a passive index fund.
+brownie - a python based environment for solidity development
 
-Dynamic set - a set whose components (and fees) are set algorithmically. Similar to an algo-driven active fund.
+TruffleSuite - a sweet suite of tools for SC development. Ganache sets up an instance of a eth devnet on a localhost. Truffle is a simple to use dev env for writing, compiling, and deploying SCs (requires nodejs + npm). 
+https://trufflesuite.com/
 
-Social trading - a set that follows the trading strategy of another trader, essentially "following" them
-        
-### Wallets
-Metamask - a self-custodial software cryptocurrency wallet used to interact with the Ethereum blockchain. A browser extension and mobile app. Some concerns have been raised by researchers at Brave about using a browser plugin as a wallet as it facilitates wallet address tracking across browsing.
-Concensys is the company which makes Metamask.
-It feels really werid to trust a browser extension with money.
-https://metamask.io/
+faucet - a contract which mints free tokens on a testnet (testing network). multiple testing networks exist such as Kovan, Ropsten, and more.
 
-Phantom -  a self-custodial software wallet, audited by Kudelski Security, for Solana.
+Infura - full nodes which are publicly accessible/usable via an API. instead of running your own full node, just use Infura
 
-Coinbase Wallet - ?
-https://www.coinbase.com/wallet
+etherscan - a free webUI for investigating contracts, transactions, and wallets on ethereum mainnet and testnets.
 
-Trust Wallet - ?
-https://trustwallet.com/
+### Audits and Security
 
-MyEthereumWallet (MEW) - ?
-https://www.myetherwallet.com/
-
-Coinomi - ?
-https://www.coinomi.com/en/
-
-Exodus - ?
-https://www.exodus.com/
-
-BRD - ?
-https://brd.com/
-
-### News and Information
-Coindesk - a news site specializing in bitcoin and digital currencies
-
-CoinGecko -  a one-stop-shop for all information around crypto prices, latest updates, and crypto educational material
-
-CoinTelegraph - a news, research, and market information website. Not related to Cointelpro, or is it?
-
-DeFi Llama - a DeFi TVL aggregator
-
-The Block - news, quotes, prices, etc. 
-### NFTs and Collectibles
-Bored Ape Yacht Club (BAYC, Bored Ape) - a non-fungible token collection built on the Ethereum blockchain. The collection features profile pictures of cartoon apes that are procedurally generated by an algorithm. Owners of a Bored Ape NFT are granted access to a private online club, exclusive in-person events, and intellectual property rights for the image. 
-A project by Yuga Labs.
-
-Mutant Ape Yacht Club - a collection of 20,000 Mutant Apes that were created by exposing a Bored Ape to a vial of Mutant Serum, whatever the hell that means.
-A project by Yuga Labs.
-
-Beeple - Mike Winkelmann, a digital artist who sold some of his art as NFTs for millions of USD
-
-OpenSea - an NFT marketplace
-
-
-### Security
 OpenZeppelin - a set of vetted smart contracts. It helps you put precautionary security measures in place for your Web3 apps. Using its audit services, you can ensure your practices will conform to a set of established standards. It describes itself as an open-source framework for building secure smart contracts, meant to simplify the process of building smart contracts.
 
 Blockchain-based password managers - store your passwords and credit card numbers on the blockchain. 
@@ -689,6 +602,167 @@ Slither -  a static analyzer that detects common mistakes such as bugs in reentr
 https://github.com/crytic/slither
 
 Echidna - a next-generation smart fuzzer that targets EVM bytecode. The Assurance team will apply their knowledge of these tools with expertise in static analysis, fuzzing and concolic testing, and design-level risks to ensure your smart contracts are free from vulnerabilities and that you have the right tools and knowledge to ensure long-term success.
+
+Smart contract security/auditing tools
+https://consensys.github.io/smart-contract-best-practices/security-tools/
+
+### APIs and Data
+dune - a service that takes info about blockchains and puts it into sql tables for users to query and create charts with. the service is free, for now.
+dune reminds me of something about selling pickaxes during a gold rush.
+
+The Graph (GRT) - a decentralized protocol for indexing and querying data from blockchains. Just as Google indexes the web, The Graph indexes blockchain data from networks like Ethereum and Filecoin. This data is grouped into open APIs called subgraphs that anyone can query
+
+### dApps
+#### File hosting
+IPFS (InterPlanetary File System) - a protocol and peer-to-peer network for storing and sharing data in a distributed file system. IPFS uses content-addressing to uniquely identify each file in a global namespace connecting all computing devices. IPFS is similar to BitTorrent - it uses DHT to store files/data. IPFS is created/maintained by Protocol Labs.
+IPFS has been used for Phishing, Botnet C&C, and malware hosting.
+IPFS has also been used by CloudFlare, Brave, and Microsoft
+
+#### Name services
+Unstoppable domain - a domain name, registered through a blockchain, that can translate a wallet address to a human-friendly name. Unstoppable domains do not require renewal fees. Unstoppable Domains is operated by a for-profit company.
+Compare with ENS. Compare with Namecoin.
+
+Ethereum Name Service (ENS) - traditional DNS servers, translating website requests into IP addresses and controlling the server a user will reach when they search for a domain. However, instead of using a traditional registrar, ENS uses smart contracts. This helps to remove many of the traditional practices required to purchase a domain such as personal information and billing details. ENS is operated by a DAO and voting is done with ENS tokens.
+Compare with Unstoppable Domains. Compare with Namecoin.
+
+#### Mixers and tumblers
+TornadoCash - a mixer/tumbler service
+
+#### Swapping, lending, and borrowing (DEX)
+yEarn - a yield aggregator. A collection of decentralized finance (DeFi) products that allow users to earn interest on their crypto assets using smart contract platforms like Ethereum.
+
+Anchor - a savings, lending and borrowing platform built on the Terra Blockchain. It offers lucrative passive income opportunities for depositors and provides borrowers easy access to collateral-backed stablecoin loans
+
+Aave - one of the most popular and leading lending protocols in the DeFi landscape. Has been around since 2017.
+
+Compound (cToken) - a lending market. Deposit a token and you receive, newly minted, cTokens (e.g. cDAI), representing your share of some pool. Exchange your cToken for your original deposit and the cToken is burnt. cTokens are valuable because they are collateralized by the pool of deposited tokens.
+COMP is the governance token of Compound.
+
+Benqi - a lending platform on Avalanche
+
+Sushiswap - an Automated Market Maker (AMM) and lending protocol with a governance token known as SUSHI
+
+Uniswap - a cryptocurrency exchange which uses a decentralized network protocol. Uniswap is also the name of the company that initially built the Uniswap protocol. The protocol facilitates automated transactions between cryptocurrency tokens on the Ethereum blockchain through the use of smart contracts. 
+Uniswap contacts can limit maximum price slippage. The governance token is UNI, similar to how Compound has COMP.
+Uniswap has version 2 and version 3. Version 3 supports ranges for liquidity suppliers (effectively a limit order).
+
+Pancakeswap - an alternative to uniswap
+
+Curve - a software that uses multiple cryptocurrencies to operate an automated market making service focused on stablecoins
+
+Platypus - a single-side AMM (decentralized exchange) designed for exchanging stablecoins on the Avalanche network
+
+1inch - a decentralized exchange that aims to offer the "best rates by discovering the most efficient swapping routes across all leading DEXes."
+
+Kyber Network - a non-custodial DEX
+
+Balancer - a DEX with an AMM (similar to Uniswap). Balancer is able to create liquidity pools of many (more than 2) assets. Governance token is BAL.
+
+Dy/dx (DYDX) - a DEX for margin trading and derivatives using a hybrid on-chain/off-chain approach. This hybrid approach supports limit orders and maximum slippage constraints. Flash loans are free.
+
+Project Serum - a DEX
+
+KyberNetwork (KNC) - a decentralized finance (DeFi) project that gives users the ability to exchange one cryptocurrency for another without having to use a centralized exchange.
+
+#### Gambling
+Augur - allows you to buy and sell real-money stakes in world outcomes including sports, crypto, politics, and current events. Crypto betting.
+
+#### Oracles
+chainlink - a framework for DONs. Nodes are paid for thier services in LINK.
+
+#### NFTs
+opensea - an NFT markteplace on the Polygon network
+
+coinbase nft - coinbase's nft marketplace
+
+Rarible
+
+Axie
+
+NBA Top Shot
+
+SuperRare
+
+Bored Ape Yacht Club (BAYC, Bored Ape) - a non-fungible token collection built on the Ethereum blockchain. The collection features profile pictures of cartoon apes that are procedurally generated by an algorithm. Owners of a Bored Ape NFT are granted access to a private online club, exclusive in-person events, and intellectual property rights for the image. 
+A project by Yuga Labs.
+
+Mutant Ape Yacht Club - a collection of 20,000 Mutant Apes that were created by exposing a Bored Ape to a vial of Mutant Serum, whatever the hell that means.
+A project by Yuga Labs.
+
+Beeple - Mike Winkelmann, a digital artist who sold some of his art as NFTs for millions of USD. No relation to the Winklevoss twins of Gemini.
+
+#### DAOs
+The DAO - a decentralized autonomous organization that exists as a set of contracts that resides on the Ethereum blockchain, sort of like the original DAO LLC. It no longer exists.
+The attack on The DAO caused a fork of Etherum into Ethereum (ETH) and Ethereum Classic (ETC).
+
+MakerDAO
+
+#### Others
+DeFi Pulse Index - a service which creates a portfolio of static composite tokens using static sets.
+
+Instadapp - ?
+
+Numerai - an AI-run, crowd-sourced hedge fund
+
+Wormhole - a popular blockchain bridge that was recently hacked for over $300 mill. Wormhole relies on 19 Guardians to reach consensus. Jump Crypto is one of them.
+
+Nexus Mutual - a decentralized alternative to insurance. Nexus Mutual's first product is Smart Contract Cover, which protects against smart contract vulnerabilities for smart contracts - “unintended code usage that results in a material financial loss”.
+
+Bitpay - a bitcoin payment service provider. BitPay provides Bitcoin and Bitcoin Cash payment processing services for merchants.
+
+Set Protocol - a protocol for creating tokenized baskets of ERC20 tokens (similar to an ETF or mutual fund).
+
+Static set - a set whose tokens do not change. Similar to a passive index fund.
+
+Dynamic set - a set whose components (and fees) are set algorithmically. Similar to an algo-driven active fund.
+
+Social trading - a set that follows the trading strategy of another trader, essentially "following" them
+
+
+### Wallets
+Emrit -  a maker of a hardware device, a CoolSpot, which mines cryptocurrencies. HNT is one token it supports.
+
+Metamask - a self-custodial software cryptocurrency wallet used to interact with the Ethereum blockchain. A browser extension and mobile app. Some concerns have been raised by researchers at Brave about using a browser plugin as a wallet as it facilitates wallet address tracking across browsing.
+Concensys is the company which makes Metamask.
+It feels really werid to trust a browser extension with money.
+https://metamask.io/
+
+Uphold - ?
+
+Phantom -  a self-custodial software wallet, audited by Kudelski Security, for Solana.
+
+Coinbase Wallet - ?
+https://www.coinbase.com/wallet
+
+Trust Wallet - ?
+https://trustwallet.com/
+
+MyEthereumWallet (MEW) - ?
+https://www.myetherwallet.com/
+
+Coinomi - ?
+https://www.coinomi.com/en/
+
+Exodus - ?
+https://www.exodus.com/
+
+BRD - ?
+https://brd.com/
+
+Gemini Wallet - ?
+
+### News and Information
+Coindesk - a news site specializing in bitcoin and digital currencies
+
+CoinGecko -  a one-stop-shop for all information around crypto prices, latest updates, and crypto educational material
+
+CoinTelegraph - a news, research, and market information website. Not related to Cointelpro, or is it?
+
+DeFi Llama - a DeFi TVL aggregator
+
+The Block - news, quotes, prices, etc. 
+
+
 
 
 Exploits, Attacks, and Hacks
@@ -741,7 +815,7 @@ take advantage of the immutibility of a blockchain by publishing C2 instructions
 ### Targeting an Exchange
 See Mt. Gox, Bitfloor, Bitfinex, Coincheck, Binance
 
-### Targeting a Contract or Combining Contracts
+### Targeting a Contract or Contract Combinations
 Re-entrancy bug - when a function makes an external call to another untrusted contract. Then the untrusted contract makes a call back to the original function in an attempt to drain funds. One of the major dangers of calling external contracts is that they can take over the control flow, and make changes to your data that the calling function wasn't expecting.
 re-entering the start of a contract before executing the remaining of the contract. in the case of TheDAO hack, attackers were able to enter the contract logic, withdraw funds, then re-enter the contract logic (and re-withdraw) before account balances were updated.
 
