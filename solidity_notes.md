@@ -47,13 +47,29 @@ types
 - **int, int8, intN** - signed ints
 - **bytes, bytes16, bytes32** - bytes
 - https://docs.soliditylang.org/en/latest/types.html
+- types
+- global variables which are dynamically allocated, like arrays and maps, follow a [different storage layout scheme](https://docs.soliditylang.org/en/v0.8.13/internals/layout_in_storage.html#mappings-and-dynamic-arrays). 
+  - essentially, the storage slot where the array is declared is keccak256 hashed and that hash value is the storage slot (recall a contract has 2**256 storage slot addresses)
+  - map storage is similar but includes hashing the key of the map. things get really hairy when incorporating structs or multi-dimensional dynamic arrays
+  - the first item of the dynamic unsigned integer array `two` in the following contract would be locatable with `web3.eth.getStorageAt('CONTRACT_ADDR', web3.utils.keccak256('0x0000000000000000000000000000000000000000000000000000000000000002'));`
+```
+contract Foo {
+  uint zero = 0;
+  uint one = 1;
+  uint[] two;
+
+  constructor() {}
+}
+```
+  - variables marked as public will have a getter function automatically created for them, so if a dynamically sized array is marked public, it will have a getter convenience function you can use instead of the above wonky shite
+
 
 address type member functions
 ---------------------------
 - **delegatecall()** - a contract can delegate the definition of a function to another contract. delegatecall allows for the creation of modular code and libraries. trusting external contracts with things like delegatecall is duh duh duh dAnGeRoUs. but so is trusting 3rd party libraries in any language.
 - **transfer()** - transfer an address some ether. if the address is a contract and does not have a fallback/receive() function defined, the transfer can fail. transfer has a static gas limit.
 - **send()** - similar to transfer, returns a bool status
-- **call()** - triggers a function in a smart contract. empty data triggers a contract's fallback function. returns a bool status.
+- **call()** - triggers a function in a smart contract. empty data triggers a contract's fallback function. returns a bool status. always be sure to specify gas limits when executing a contract's function with a low-level interface like `call`, otherwise the contract you're calling could consume all the gas in a transaction. in fact, don't use `call` if you don't have to. it's dangerous.
 
 contracts can access special values at execution time. these values can be provided by the current state of the contract, the current block, the transaction, or the message initiated the transaction.
 see https://docs.soliditylang.org/en/latest/units-and-global-variables.html#block-and-transaction-properties
@@ -79,6 +95,16 @@ web3.eth.getStorageAt('CONTRACT ADDR', STORAGE_SLOT_UINT)
 string and bytes are stored bigendian
 bools, numbers, addresses, etc are littleendian
 values smaller than 32 bytes are packed together to save storage space, so a single storage slot can contain multiple contract state values. value packing depends on the order of variable declarations in the contract. this means their is a way to optimally declare storage variables such a contract can save on fees.
+
+contract creation
+-----------------
+- a transaction with data but no recipient address (value of 0) means a contract creation transaction
+
+- the EVM executes the data of a contract creation transaction
+  - data contains the contract's initialization code (constructor) and the contract's runtime code (everything but the constructor), concatenated. 
+  - EVM executes the data until the first STOP or RETURN opcode which marks the end of the initialization code and the beginning of the contract's runtime code. the contract's state is then done being initialized and is, from that transaction on, callable
+  - [opcode](https://ethereum.org/en/developers/docs/evm/opcodes/)
+
 
 Random Observations and Thoughts
 --------------------------------
