@@ -129,7 +129,8 @@ NFTs often represent art or collectibles in the context of a blockchain, thus, t
 Total Value Locked (TVL) - the overall value of crypto assets deposited in a decentralized finance (DeFi) protocol. The amount of currency tied up in smart contracts on a blockchain.
 
 Wrapped token - a token that represents a cryptocurrency from another blockchain or token standard and is worth the same as the original cryptocurrency. Unlike the original cryptocurrency, the wrapped token can be used on certain non-native blockchains and later redeemed for the original cryptocurrency.
-Similar to a stablecoin, a token is locked into a contract and then a wrapped version is minted. Upon withdrawing from the contract, the wrapped token is burnt. Wrapped tokens are prefixed with a "w", e.g. wBTC is wrapped bitcoin, wETH is wrapped Ether
+Similar to a stablecoin, a token is locked into a contract and then a wrapped version is minted. Upon withdrawing from the contract, the wrapped token is burnt. Wrapped tokens are prefixed with a "w", e.g. wBTC is wrapped bitcoin, wETH is wrapped Ether. 
+Some swap contracts will issue their own version of a token. Since Compound cannot mint _true_ DAI, they accept ether and mint cDAI (almost like a receipt or certificate of deposit). Yield mints yDAI. Aave mints aDAI. Those CD-like tokens, which are redeemable for the original ether, then have value and can be swapped/traded/sold.
 
 Bridge - a connection that allows the transfer of tokens and/or arbitrary data from one chain to another. Bridges "wrap" tokens when they are converted from one blockchain to another.
 
@@ -590,7 +591,7 @@ Kudelski Security - a very reputable blockchain auditing company
 
 Quantstamp - ?
 
-Peckshield - ?
+Peckshield - they make a browser extension that checks for scam token addresses being used by your other browser extension (wallet). @PeckShieldAlert on twitter is decent, too
 
 Trail of bits - a very reputable software auditing firm offering blockchain services
 
@@ -779,6 +780,10 @@ https://arxiv.org/abs/2109.06836
 popups which resemble metamask approvals
 https://blog.knowbe4.com/phishing-attack-targets-metamask-user-private-keys
 
+alter the important contract addresses of a wallet somehow. If someone deploys a contract that accepts ether deposits, mints my own version of wrapped ether, but never allows for the withdrawl of the deposited ether that someone could make bank.
+Metamask: https://github.com/MetaMask/metamask-extension/blob/40095cce67807dc89e46917a6422ad1694b2a2c5/shared/constants/swaps.js#L91-L92
+MEW: https://github.com/MyEtherWallet/ethereum-lists/tree/master/src/tokens/eth
+
 ### Targeting a Project
 hack a dApp's frontend hosting provider and hijack the domain
 https://twitter.com/QuickswapDEX/status/1525306033400188928
@@ -847,7 +852,10 @@ Pump and dump - to drive up the price of an asset (pump) with the intention of s
 
 honeypot contracts - publish a contract to the blockchain which looks to be vulnerable, but isn't. attackers send the contract tokens in an attempt to drain/exploit the contract. the exploits don't work as the attackers expect, thus funding the contract. eventually, the contract owner withdraws the contract's balance.
 
-Pig-Butchering Scam (杀猪盘) - using a dating app to contact a target and eventually convincing them to send you their tokens 
+Pig-Butchering Scam (杀猪盘) - using a dating app to contact a target and eventually convincing them to send you their tokens. I much prefer the term "keyboard Casanova" for this scam.
+It works like this: "I love you, send me money". And then people do.
+
+Impersonation scams - similar to a BEC, impersonation scammers pretend to be an authority, like the SSA or IRS, and demand payment in crypto.
 
 ransomware - encrypt some data (files or databases), lock a browser (browser lockers), or lock an endpoint and hold it ransom
 
@@ -900,6 +908,9 @@ https://ocw.mit.edu/courses/mas-s62-cryptocurrency-engineering-and-design-spring
 MetaMask's blacklist of phishing domains
 https://github.com/MetaMask/eth-phishing-detect/blob/master/src/hosts.txt
 
+MyEthereumWallet's blocklist of addresses 
+https://github.com/MyEtherWallet/ethereum-lists/blob/master/src/addresses/addresses-darklist.json
+
 Smart contract best practices
 https://consensys.github.io/smart-contract-best-practices/attacks/
 
@@ -921,6 +932,9 @@ https://www.odysseydao.com/learn - a catalog of great reading material for getti
 Chainalysis Crypto Crime reports - execllent reporting and graphs on crime involving cryptocurencies
   - 2021 https://go.chainalysis.com/rs/503-FAP-074/images/Chainalysis-Crypto-Crime-2021.pdf
   - 2022 https://go.chainalysis.com/rs/503-FAP-074/images/Crypto-Crime-Report-2022.pdf
+
+AARP reporting on crypto scams and fraud
+https://www.aarp.org/money/scams-fraud/info-2019/cryptocurrency.html
 
 Papers Worth Reading
 --------------------
