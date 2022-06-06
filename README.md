@@ -845,6 +845,7 @@ See attacks against bzX, dForce, yEarn (161 token transfers in the transaction!)
 
 Attacks which combine contracts in a clever way to execute an exploit remind me of ROP gadgets. 
 
+
 ### Targeting Users
 Rug pull - scam in which a crypto developer promotes a new project to investors, and then disappears. ICOs are subject to rug pulls.
 
@@ -862,6 +863,14 @@ ransomware - encrypt some data (files or databases), lock a browser (browser loc
 clippers - injecting new data into a user's clipboard. if malware sees that a source wallet address has been copied to the clipboard, replace it with a different address.
 
 cryptojacker - mining on system without permission. [norton 360 now comes with a crypto~jacker~miner](https://krebsonsecurity.com/2022/01/norton-360-now-comes-with-a-cryptominer/)
+
+create a fraudulent escrow service
+
+build something big, pretend to get hacked, take all the money
+
+hype an ICO then just take the money
+
+Take a bunch of money and then die mysteriously, like QuadrigaCX
 
 
 References and Notable Literature
