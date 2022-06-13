@@ -790,7 +790,9 @@ https://twitter.com/QuickswapDEX/status/1525306033400188928
 
 drop phishing URLs into a project's discord channels
 
-inject into the frontend DOM of a dApp and alter transaction details (these details will still be correct in the wallet's approval prompts but user may not pay close enough attention to identify discrepancies between transaction approval amounts in a dApp frontend vs in a wallet)
+inject into the frontend DOM of a dApp and alter transaction details (these details will still be correct in the wallet's approval prompts but user may not pay close enough attention to identify discrepancies between transaction approval amounts in a dApp frontend vs in a wallet). this is very similar to "ice phishing"
+
+[ice phishing](https://www.microsoft.com/security/blog/2022/02/16/ice-phishing-on-the-blockchain/) - tricking a user into signing a transaction that delegates approval of the user’s tokens to the attacker instead of an intended dapp, such as uniswap.
 
 ### Targeting a Network
 Sybil attack - aka the 51% attack. Influencing a network by controlling the majority of its nodes or consensus mechanism.
@@ -884,6 +886,9 @@ https://www.gemini.com/cryptopedia
 Blockchain Graveyard - a repo of blockchain-related fails
 https://magoo.github.io/Blockchain-Graveyard/
 
+rekt leaderboard - similar to the blockchain graveyard, a list of hacked blockchain projects
+https://rekt.news/leaderboard/
+
 Awesome-Ethereum - An awesome list about everything related to the Ethereum platform.
 https://github.com/ttumiel/Awesome-Ethereum
 
@@ -944,6 +949,12 @@ Chainalysis Crypto Crime reports - execllent reporting and graphs on crime invol
 
 AARP reporting on crypto scams and fraud
 https://www.aarp.org/money/scams-fraud/info-2019/cryptocurrency.html
+
+a16z crypto's _Smart Contract Security: A Simple Checklist for Web3 Development_
+https://a16zcrypto.com/smart-contract-security-checklist-web3-development/
+
+Mudit Gupta live auditing a smart contract project, "Auditing Smart Contracts - Security Review of Ethereum Applications"
+https://www.youtube.com/watch?v=LLiJK_VeAvQ
 
 Papers Worth Reading
 --------------------
