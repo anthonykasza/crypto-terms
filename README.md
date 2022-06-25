@@ -976,3 +976,7 @@ https://github.com/christoftorres/HoneyBadger
 A Data Science Approach for Detecting Honeypots in Ethereum - using labeled data from "The Art of The Scam: Demystifying Honeypots in Ethereum Smart Contracts" this paper creates an ML classifier to identify honeypot contracts
 https://arxiv.org/abs/1910.01449
 https://github.com/rcamino/honeypot-detection
+
+
+Are blockchains decentralized? | Trail of Bits - the ToB people take a thorough look at how decentralized blockchains __really__ are
+https://blog.trailofbits.com/2022/06/21/are-blockchains-decentralized/
