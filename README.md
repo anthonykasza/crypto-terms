@@ -607,6 +607,9 @@ Echidna - a next-generation smart fuzzer that targets EVM bytecode. The Assuranc
 Smart contract security/auditing tools
 https://consensys.github.io/smart-contract-best-practices/security-tools/
 
+forta threat detection kits - SDKs for creating Forta detection bots/agents/sentinels. forta has created a "killchain" for web3 attacks (funding, preparation, exploitation, money laundering) and has mapped threat detection kits to this killchain. these remind of MITRE's ATT&CK framework but for blockchain projects. 
+https://docs.forta.network/en/latest/starter-kit-bot-details/
+
 ### APIs and Data
 dune - a service that takes info about blockchains and puts it into sql tables for users to query and create charts with. the service is free, for now.
 dune reminds me of something about selling pickaxes during a gold rush.
@@ -857,6 +860,9 @@ honeypot contracts - publish a contract to the blockchain which looks to be vuln
 
 Pig-Butchering Scam (杀猪盘) - using a dating app to contact a target and eventually convincing them to send you their tokens. I much prefer the term "keyboard Casanova" for this scam.
 It works like this: "I love you, send me money". And then people do.
+
+sleep minting - minting an NFT, forcing ownership to famous person's EOA (while marking it transferable to an attacker owned account), reclaim the NFT, then selling it. this makes the NFT seem as though the famous person minted it and the attacker EOA is reselling a priceless piece of collectible NFT art. there's also some trickery employed around the NFT's UID.
+https://www.coindesk.com/markets/2021/04/27/the-art-of-the-prank-how-a-hacker-tried-to-fake-the-worlds-most-expensive-nft/
 
 Impersonation scams - similar to a BEC, impersonation scammers pretend to be an authority, like the SSA or IRS, and demand payment in crypto.
 
