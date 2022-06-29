@@ -772,6 +772,9 @@ The Block - news, quotes, prices, etc.
 Exploits, Attacks, and Hacks
 --------------------------------------
 
+The SWC Registry - a catalog of smart contract weaknesses. similar to CVEs but for smart contracts.
+https://swcregistry.io/
+
 ### Targeting a Wallet or Custodian
 Steal private keys (in an id.json file) from an endpoint
 
