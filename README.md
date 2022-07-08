@@ -950,6 +950,8 @@ https://ethernaut.openzeppelin.com/ - a smart contract CTF by openzeppelin
 
 https://etherhack.positive.com/#/ - an ethereum smart contract CTF
 
+https://github.com/blockthreat/blocksec-ctfs - a catalog of crypto CTFs and training by Peter Kacherginsky
+
 https://www.odysseydao.com/learn - a catalog of great reading material for getting into web3 and defi. the pages load really slow for me :(
 
 Chainalysis Crypto Crime reports - execllent reporting and graphs on crime involving cryptocurencies
