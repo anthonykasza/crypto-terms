@@ -928,6 +928,10 @@ https://www.coursera.org/learn/decentralized-finance-opportunities-and-risk-duke
 MIT Open Courseware, CRYPTOCURRENCY ENGINEERING AND DESIGN
 https://ocw.mit.edu/courses/mas-s62-cryptocurrency-engineering-and-design-spring-2018/video_galleries/lecture-videos/
 
+DeFi MOOC
+https://defi-learning.org/f22
+https://www.youtube.com/playlist?list=PLS01nW3RtgopJOtsMVOK3N7n7qyNMPbJ_
+
 MetaMask's blacklist of phishing domains
 https://github.com/MetaMask/eth-phishing-detect/blob/master/src/hosts.txt
 
