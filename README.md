@@ -798,8 +798,6 @@ drop phishing URLs into a project's discord channels
 
 inject into the frontend DOM of a dApp and alter transaction details (these details will still be correct in the wallet's approval prompts but user may not pay close enough attention to identify discrepancies between transaction approval amounts in a dApp frontend vs in a wallet). this is very similar to "ice phishing"
 
-[ice phishing](https://www.microsoft.com/security/blog/2022/02/16/ice-phishing-on-the-blockchain/) - tricking a user into signing a transaction that delegates approval of the user’s tokens to the attacker instead of an intended dapp, such as uniswap.
-
 ### Targeting a Network
 Sybil attack - aka the 51% attack. Influencing a network by controlling the majority of its nodes or consensus mechanism.
 
@@ -855,6 +853,8 @@ Attacks which combine contracts in a clever way to execute an exploit remind me 
 
 
 ### Targeting Users
+[ice phishing](https://www.microsoft.com/security/blog/2022/02/16/ice-phishing-on-the-blockchain/) - tricking a user into signing a transaction that delegates approval of the user’s tokens to the attacker instead of an intended dapp, such as uniswap.
+
 Rug pull - scam in which a crypto developer promotes a new project to investors, and then disappears. ICOs are subject to rug pulls.
 
 Pump and dump - to drive up the price of an asset (pump) with the intention of selling it (dump) before the price drops. Parties who buy at the height of a pump are left "holding the bag" once the asset's price drops.
@@ -965,14 +965,23 @@ Chainalysis Crypto Crime reports - execllent reporting and graphs on crime invol
 AARP reporting on crypto scams and fraud
 https://www.aarp.org/money/scams-fraud/info-2019/cryptocurrency.html
 
+What To Know About Cryptocurrency and Scams - an article by The Federal Trade Commission (FTC)
+https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-and-scams
+
 a16z crypto's _Smart Contract Security: A Simple Checklist for Web3 Development_
 https://a16zcrypto.com/smart-contract-security-checklist-web3-development/
 
 Mudit Gupta live auditing a smart contract project, "Auditing Smart Contracts - Security Review of Ethereum Applications"
 https://www.youtube.com/watch?v=LLiJK_VeAvQ
 
+Confiant's blog - Confiant is an adtech company with incredible visibility into the crypto ecosystem. They publish excellent analyses on scams, phishes, exploits, and malware targeting crypto 
+https://blog.confiant.com/
+
 Papers Worth Reading
 --------------------
+Extracting Godl [sic] from the Salt Mines: Ethereum Miners Extracting Value - how EVM miners deciding which transactions they accept to maximize miner profits. Why put your transactions first when the miner can reorder things to make more tokens for itself? This problem-space has likely changed since the switch from PoH to PoS in Ethereum
+https://arxiv.org/abs/2203.15930
+
 What's in Your Wallet? Privacy and Security Issues in Web 3.0 - web2 trackers embedded on defi sites can be used to compromise the privacy of web3 users. embedded javascript can also be used to modify a defi site's DOM and trick the user into confirming transactions in their metamask wallet which are not part of the legitimate defi site. the group created a metamask patch which rotates (uses fake/proxy) wallet addresses for each defi site to avoid tracking a user's activity back to a single EOA wallet.
 https://arxiv.org/abs/2109.06836
 https://github.com/brave-experiments/defi-privacy-measurements
