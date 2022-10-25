@@ -11,12 +11,12 @@ Terms
 *Ownable* - a contract that can be inherited from using `is`. a contract's owner is able to do special things.
 
 **function modifiers**  - modifiers are declared just like functions except they start with "modifier" instead of "function". and they end with "_;" which represents the function's body which the modifier is attached to. modifiers can take arguments. see: https://docs.soliditylang.org/en/latest/contracts.html#function-modifiers
-- **private**, if the function is callable ONLY inside the contract
-- **public**, if the function is only callable by the contract
-- **internal**, private but inherited classes can call the func
-- **external**, public and ONLY callable outside of the contract
-- **pure**, if the function doesn't access any data in the app
-- **view**, if the function only views data in the app, but does not modify. view functions do not cost gas when called externally.
+- **private**, the function is callable ONLY inside the contract
+- **internal**, the function is callable from inside the contract and derived contracts
+- **external**, the function is callable ONLY from a third party (cannot be called by the contract)
+- **public**, the function is by anyone
+- **pure**, the function doesn't access any data in the app
+- **view**, the function only views data in the app, but does not modify. view functions do not cost gas when called externally.
 - **override**, a modifier which explicitly labels a function as an override of a virtual function
 - **virtual**, a function which permits inherited classes to override it
 - **returns**, the type the function returns
